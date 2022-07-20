@@ -1,70 +1,97 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{% load static %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{% static 'css/formCadastro.css' %}">
 <!-- Formulário Cadastro de horários -->
-<div class="container-form">
-    <form>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-        <label for="inputTarefa">Nome da Tarefa</label>
-        <input type="text" class="form-control" id="inputTarefa" placeholder="Insira aqui o nome da tarefa">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="inputHorario">Horário</label>
-        <input type="text" class="form-control" id="inputHorario" placeholder="Selecione o horário da tarefa" list="horario">
-        <datalist id="horario">
-            <option value="08:00">
-            <option value="10:00">
-            <option value="12:00">
-            <option value="14:00">
-            <option value="16:00">
-            <option value="18:00">
-        </datalist>
-    </div>
-    <div class="form-group">
-        <label for="inputDiaSemana">Dia da semana
-        <select class="form-control" id="inputDiaSemana">
-            <option value="" disabled selected>Selecione o dia da semana</option>
-            <option value="Segunda-feira">Segunda-feira</option>
-            <option value="Terça-feira">Terça-feira</option>
-            <option value="Quarta-feira">Quarta-feira</option>
-            <option value="Quinta-feira">Quinta-feira</option>
-            <option value="Sexta-feira">Sexta-feira</option>
-            <option value="Sábado">Sábado</option>
-        </select>
-        </label>
-    </div>
-    <div class="form-group">
-        <label for="inputHorario">Selecione a prioridade: </label>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            <label class="form-check-label" for="inlineRadio1">1</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-            <label class="form-check-label" for="inlineRadio2">2</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-            <label class="form-check-label" for="inlineRadio3">3</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
-            <label class="form-check-label" for="inlineRadio4">4</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
-            <label class="form-check-label" for="inlineRadio5">5</label>
-        </div>
-    </div>
-    
-    <button type="submit" class="btn btn-primary">Cadastrar tarefa</button>
-    </form>  
+<div  class="d-flex justify-content-center">
+    <h1>HelpMyCompany</h1>
+    <img src="{% static 'images/task-png--1600.png' %}" alt="Logo" width="50" height="50">
 </div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h3 class="mb-3">Cadastro de tarefa</h3>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputTarefa">Nome da Tarefa</label>
+                        <input type="text" class="form-control" id="inputTarefa"
+                            placeholder="Insira aqui o nome da tarefa">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputHorario">Horário
+                        <select class="form-control" id="inputHorario">
+                            <option value="" disabled selected>Selecione o dia da semana</option>
+                            <option value="08:00">08:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="18:00">18:00</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="inputDiaSemana">Dia da semana
+                        <select class="form-control" id="inputDiaSemana">
+                            <option value="" disabled selected>Selecione o dia da semana</option>
+                            <option value="Segunda-feira">Segunda-feira</option>
+                            <option value="Terça-feira">Terça-feira</option>
+                            <option value="Quarta-feira">Quarta-feira</option>
+                            <option value="Quinta-feira">Quinta-feira</option>
+                            <option value="Sexta-feira">Sexta-feira</option>
+                            <option value="Sábado">Sábado</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="inputHorario">Selecione a prioridade: </label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1">
+                        <label class="form-check-label" for="inlineRadio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                            value="option3">
+                        <label class="form-check-label" for="inlineRadio3">3</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4"
+                            value="option4">
+                        <label class="form-check-label" for="inlineRadio4">4</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5"
+                            value="option5">
+                        <label class="form-check-label" for="inlineRadio5">5</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-primary mr-5">Cadastrar tarefa +</button>
+                    <button type="submit" class="btn btn-primary">Submeter tarefas</button>
+                </div>
+            </form>
+        </div>
 
-<div class="custom-file">
-    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-    <label class="custom-file-label" for="validatedCustomFile">Selecione um arquivo para ser compactado...</label>
-    <div class="invalid-feedback">Submeta um arquivo válido.</div>
+        <div class="col">
+            <h3 class="mb-3">Submissão de arquivo</h3>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input mb-3" id="validatedCustomFile" required>
+                <label class="custom-file-label" for="validatedCustomFile">Selecione um arquivo para ser
+                    compactado...</label>
+                <div class="invalid-feedback">Submeta um arquivo válido.</div>
+                <button type="submit" class="btn btn-primary">Submeter arquivo</button>
+            </div>
+        </div>
+    </div>
 
-    <button type="submit" class="btn btn-primary">Submeter arquivo</button>
 </div>
