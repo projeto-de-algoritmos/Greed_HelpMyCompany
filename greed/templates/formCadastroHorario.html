@@ -1,90 +1,90 @@
 {% load static %}
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
-<link rel="stylesheet" href="{% static 'css/formCadastro.css' %}">
+<link rel="stylesheet" href="{% static 'css/formCadastro.css' %}" />
 <!-- Formulário Cadastro de horários -->
 <div class="d-flex justify-content-center">
     <h1>HelpMyCompany</h1>
-    <img src="{% static 'images/task-png--1600.png' %}" alt="Logo" width="50" height="50">
+    <img src="{% static 'images/task-png--1600.png' %}" alt="Logo" width="50" height="50" />
 </div>
 <div class="container-flex mt-5 ml-5">
     <div class="row">
         <div class="col-auto">
             <h3>Cadastro de tarefa</h3>
             <div>
-                <form method="POST"> {% csrf_token %}
-                   <div id="formulario">
-                    <div class="form-row">
-                        <div class="form-inline col-auto mr-1">
-                            <label for="inputTarefa">Nome da Tarefa: </label>
-                            <input type="text" class="form-control" name="nome1" id="inputTarefa"
-                                placeholder="nome da tarefa">
-                        </div>
-                        <div class="form-inline col-auto mr-1">
-                            <label for="inputHorario">Horário:</label>
-                                <select class="form-control" id="inputHorario" name="horario1">
-                                    <option value="" disabled selected>Horário</option>
-                                    <option value="08:00">08:00</option>
-                                    <option value="10:00">10:00</option>
-                                    <option value="12:00">12:00</option>
-                                    <option value="14:00">14:00</option>
-                                    <option value="16:00">16:00</option>
-                                    <option value="18:00">18:00</option>
-                                </select>
-                        </div>
-                        <div class="form-inline col-auto mr-1">
-                            <label for="inputDiaSemana">Dia da semana:</label>
-                                <select class="form-control" id="inputDiaSemana" name="dia1">
-                                    <option value="Segunda-feira">Segunda-feira</option>
-                                    <option value="Terça-feira">Terça-feira</option>
-                                    <option value="Quarta-feira">Quarta-feira</option>
-                                    <option value="Quinta-feira">Quinta-feira</option>
-                                    <option value="Sexta-feira">Sexta-feira</option>
-                                    <option value="Sábado">Sábado</option>
-                                </select>
-                        </div>
-                        <div class="form-inline col-auto mr-1">
-                            <label for="inputHorario">Selecione a prioridade: </label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadio1" id="inlineRadio1"
-                                    value="option1">
-                                <label class="form-check-label" for="inlineRadio1">1</label>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div id="formulario">
+                        <div class="form-row">
+                            <div class="form-inline col-auto mr-1">
+                                <label for="inputTarefa">Nome da Tarefa: </label>
+                                <input type="text" class="form-control" name="nome1" id="inputTarefa"
+                                    placeholder="nome da tarefa" />
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadio1" id="inlineRadio2"
-                                    value="option2">
-                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            <datalist id="horario">
+                                <option value="08:00">08:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="18:00">18:00</option>
+                            </datalist>
+                            <div class="form-inline col-auto mr-1">
+                                <label for="inputHorario1">Horário:</label>
+                                <input type="text" class="form-control" style="max-width: 120px" id="inputHorario1"
+                                    name="horario1" list="horario" placeholder="Selecione" />
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadio1" id="inlineRadio3"
-                                    value="option3">
-                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            <div class="form-inline col-auto mr-1">
+                                <label for="inputHorarioFim1">Horario Final:</label>
+                                <input type="text" class="form-control" style="max-width: 120px" id="inputHorarioFim1"
+                                    name="horariofim1" list="horario" placeholder="Selecione" />
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadio1" id="inlineRadio4"
-                                    value="option4">
-                                <label class="form-check-label" for="inlineRadio4">4</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadio1" id="inlineRadio5"
-                                    value="option5">
-                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            <div class="form-inline col-auto mr-1">
+                                <label for="inputHorario">Selecione a prioridade: </label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadio1" id="inlineRadio1"
+                                        value="option1" />
+                                    <label class="form-check-label" for="inlineRadio1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadio1" id="inlineRadio2"
+                                        value="option2" />
+                                    <label class="form-check-label" for="inlineRadio2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadio1" id="inlineRadio3"
+                                        value="option3" />
+                                    <label class="form-check-label" for="inlineRadio3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadio1" id="inlineRadio4"
+                                        value="option4" />
+                                    <label class="form-check-label" for="inlineRadio4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadio1" id="inlineRadio5"
+                                        value="option5" />
+                                    <label class="form-check-label" for="inlineRadio5">5</label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    </div> 
                 </form>
-                <button type="submit" class="btn btn-primary" value="Salvar" name="submitTarefas">Submeter tarefas</button>
-                <button type="button" onclick="adicionarCampo()" class="btn btn-primary mr-1">Nova tarefa+</button>
+                <button type="submit" class="btn btn-primary" value="Salvar" name="submitTarefas">
+                    Submeter tarefas
+                </button>
+                <button type="button" onclick="adicionarCampo()" class="btn btn-primary mr-1">
+                    Nova tarefa+
+                </button>
             </div>
         </div>
 
         <div class="col-auto">
             <h3 class="mb-3">Submissão de arquivo</h3>
             <div class="custom-file col-auto">
-                <input type="file" class="custom-file-input mb-3" id="validatedCustomFile" required>
+                <input type="file" class="custom-file-input mb-3" id="validatedCustomFile" required />
                 <label class="custom-file-label" for="validatedCustomFile">Selecione um arquivo para ser
                     compactado...</label>
                 <div class="invalid-feedback">Submeta um arquivo válido.</div>
@@ -94,19 +94,41 @@
     </div>
 </div>
 
-
-
 <script>
     var controleCampo = 1;
     function adicionarCampo() {
-    controleCampo++;
-    document.getElementById('formulario').insertAdjacentHTML('beforeend', '<div class="form-row mb-1 mt-1" id="campo'+ controleCampo + '"><div class="form-inline col-auto"><label for="inputTarefa">Nome da Tarefa: </label><input type="text" class="form-control" name="nome' + controleCampo + '" id="inputTarefa" placeholder="nome da tarefa"><div class="form-inline col-auto"><label for="inputHorario">Horário:</label><select class="form-control" id="inputHorario" name="horario ' + controleCampo + '"><option value="" disabled selected>Horário</option><option value="08:00">08:00</option><option value="10:00">10:00</option><option value="12:00">12:00</option><option value="14:00">14:00</option><option value="16:00">16:00</option><option value="18:00">18:00</option></select><div class="form-inline col-auto"> <label for="inputDiaSemana">Dia da semana:</label> <select class="form-control" id="inputDiaSemana" name="dia' + controleCampo + '"> <option value="Segunda-feira">Segunda-feira</option> <option value="Terça-feira">Terça-feira</option> <option value="Quarta-feira">Quarta-feira</option> <option value="Quinta-feira">Quinta-feira</option> <option value="Sexta-feira">Sexta-feira</option> <option value="Sábado">Sábado</option> </select><div class="form-inline col-auto"> <label for="inputHorario">Selecione a prioridade: </label> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadio' + controleCampo + '" id="inlineRadio1" value="option1"> <label class="form-check-label" for="inlineRadio1">1</label> </div> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadio' + controleCampo + '" id="inlineRadio2" value="option2"> <label class="form-check-label" for="inlineRadio2">2</label> </div> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadio' + controleCampo + '" id="inlineRadio3" value="option3"> <label class="form-check-label" for="inlineRadio3">3</label> </div> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadio' + controleCampo + '" id="inlineRadio4" value="option4"> <label class="form-check-label" for="inlineRadio4">4</label> </div> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadio' + controleCampo + '" id="inlineRadio5" value="option5"> <label class="form-check-label" for="inlineRadio5">5</label> <button type="button" class="btn btn-primary ml-1" id="' + controleCampo + '" onclick="removerCampo(' + controleCampo + ')"> - </button> </div> </div> </div></div></div></div>');
+        controleCampo++;
+        document
+            .getElementById("formulario")
+            .insertAdjacentHTML(
+                "beforeend",
+                '<div class="form-row mb-1 mt-1" id="campo' +
+                controleCampo +
+                '"><div class="form-inline col-auto"><label for="inputTarefa">Nome da Tarefa: </label><input type="text" class="form-control" name="nome' +
+                controleCampo +
+                '" id="inputTarefa" placeholder="nome da tarefa"></div><div class="form-inline col-auto mr-1"><label for="inputHorario">Horário:</label><input type="text" class="form-control" style="max-width: 120px" id="inputHorario" name="horario" list="horario" placeholder="Selecione" ' +
+                controleCampo +
+                '</div><div class="form-inline col-auto mr-1"><label for="inputHorarioFim">Horario Final:</label><input type="text" class="form-control" style="max-width: 120px" id="inputHorarioFim" name="horariofim" list="horario" placeholder="Selecione" ' +
+                controleCampo +
+                ' /> </div> <label for="inputHorario">Selecione a prioridade: </label> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadio' +
+                controleCampo +
+                '" id="inlineRadio1" value="option1"> <label class="form-check-label" for="inlineRadio1">1</label> </div> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadio' +
+                controleCampo +
+                '" id="inlineRadio2" value="option2"> <label class="form-check-label" for="inlineRadio2">2</label> </div> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadio' +
+                controleCampo +
+                '" id="inlineRadio3" value="option3"> <label class="form-check-label" for="inlineRadio3">3</label> </div> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadio' +
+                controleCampo +
+                '" id="inlineRadio4" value="option4"> <label class="form-check-label" for="inlineRadio4">4</label> </div> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadio' +
+                controleCampo +
+                '" id="inlineRadio5" value="option5"> <label class="form-check-label" for="inlineRadio5">5</label> <button type="button" class="btn btn-primary ml-1" id="' +
+                controleCampo +
+                '" onclick="removerCampo(' +
+                controleCampo +
+                ')"> - </button> </div> </div> </div></div></div></div>'
+            );
     }
 
-
-function removerCampo(idCampo){
-    document.getElementById('campo' + idCampo).remove();
-}
-
+    function removerCampo(idCampo) {
+        document.getElementById("campo" + idCampo).remove();
+    }
 </script>
-
