@@ -14,21 +14,21 @@
         <div class="col-auto">
             <h3>Cadastro de tarefa</h3>
             <div>
-                <form method="POST">
+                <form method="POST" action="{% url 'getTime_table' %}">
                     {% csrf_token %}
                     <div id="formulario">
                         <div class="form-row">
                             <div class="form-inline col-auto mr-1">
                                 <label for="inputTarefa">Nome da Tarefa: </label>
                                 <input type="text" class="form-control" name="nome1" id="inputTarefa"
-                                    placeholder="nome da tarefa" />
+                                    placeholder="nome da tarefa" required />
                             </div>
                             <label class="d-flex align-items-center" for="appt">Horário de início:</label>
-                            <input class="mr-1" type="time" id="appt" name="appt" min="08:00" max="21:00" required />
+                            <input class="mr-1" type="time" id="appt" name="f_horario1" required />
                             <label class="d-flex align-items-center" for="appt">Horário de fim:</label>
-                            <input type="time" id="appt" name="appt" min="08:00" max="21:00" required />
+                            <input type="time" id="appt" name="s_horario1"  required />
                             <div class="form-inline col-auto mr-1">
-                                <label for="inputHorario">Selecione a prioridade: </label>
+                                <label for="inputHorario">Selecione a prioridade:</label>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="inlineRadio1" id="inlineRadio1"
                                         value="1" />
@@ -57,13 +57,14 @@
                             </div>
                         </div>
                     </div>
+                    <button type="submit" class="btn btn-primary">
+                        Submeter tarefas
+                    </button>
                 </form>
-                <button type="submit" class="btn btn-primary" value="Salvar" name="submitTarefas">
-                    Submeter tarefas
-                </button>
                 <button type="button" onclick="adicionarCampo()" class="btn btn-primary mr-1">
                     Nova tarefa+
                 </button>
+                
             </div>
         </div>
 
@@ -80,6 +81,7 @@
     </div>
 </div>
 
+                
 <script>
     var controleCampo = 1;
     function adicionarCampo() {
@@ -92,7 +94,7 @@
                 controleCampo +
                 '"><div class="form-inline col-auto"><label for="inputTarefa">Nome da Tarefa: </label><input type="text" class="form-control" name="nome' +
                 controleCampo +
-                '" id="inputTarefa" placeholder="nome da tarefa"></div><label class="d-flex align-items-center ml-1" for="appt">Horário de início:</label><input class="mr-1" type="time" id="appt" name="appt" min="08:00" max="21:00" required /><label class="d-flex align-items-center" for="appt">Horário de fim:</label><input class="mr-1" type="time" id="appt" name="appt" min="08:00" max="21:00" required /><label for="inputHorario">Selecione a prioridade: </label> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadio' +
+                '" id="inputTarefa" placeholder="nome da tarefa" required></div><label class="d-flex align-items-center ml-1" for="appt">Horário de início:</label><input class="mr-1" type="time" id="appt" name="f_horario' + controleCampo + '"  required /><label class="d-flex align-items-center" for="appt">Horário de fim:</label><input class="mr-1" type="time" id="appt" name="s_horario' + controleCampo + '"  required /><label for="inputHorario">Selecione a prioridade: </label> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadio' +
                 controleCampo +
                 '" id="inlineRadio1" value="1"> <label class="form-check-label" for="inlineRadio1">1</label> </div> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadio' +
                 controleCampo +
