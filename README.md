@@ -63,7 +63,9 @@ $ http://127.0.0.1:8000/home/
 
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+1 - Cadastre as tarefas do seu dia.
+2 - Submeta as tarefas.
+3 - Recebe a lista com as melhores tarefas a serem seguidas =)
 
 
 
