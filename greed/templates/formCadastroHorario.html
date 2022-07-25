@@ -12,17 +12,17 @@
     <h1>HelpMyCompany</h1>
     <img src="{% static 'images/task-png--1600.png' %}" alt="Logo" width="50" height="50" />
 </div>
-{% if messages %}
-{% for message in messages %}
-<div class="alert alert-danger" role="alert">
-    {{ message }}
-</div>
-{% endfor %}
-
-{% endif %}
 <div class="d-flex justify-content-center mt-5 ml-5 ">
     <div class="row">
         <div>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-danger" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+        
+        {% endif %}
             <h3>Cadastro de tarefa</h3>
             <div>
                 <form method="POST" action="{% url 'getTime_table' %}">

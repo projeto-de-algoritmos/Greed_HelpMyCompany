@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from django.http import HttpRequest, HttpResponse,QueryDict
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
 from itertools import zip_longest
 from greed.intervalscheduling import *
@@ -14,14 +14,7 @@ def group_elements(n, iterable, padvalue='x'):
 
 def home(request):
     return render(request,'formCadastroHorario.html')
-
-def querydict_dict(start, end , weight):
-    tupla = (start, end, weight)
-    indices = []
-    indices += [tupla]
-    print(indices)
-    
-
+  
 def getTime_table(request):
 
     postdata = []
@@ -30,20 +23,20 @@ def getTime_table(request):
 
         postdata = request.POST.dict()
         postdata.pop('csrfmiddlewaretoken')
-        print(postdata)
-        print(len(postdata))
+        # print(postdata)
+        # print(len(postdata))
 
         keysList = list(postdata.values()) ## CHAMAR FUNCAO REMOVE QUOTATION
-        print(keysList)
+        # print(keysList)
 
         list_quatation = []
         list_quatation = removeQuotation(keysList)
-        print('printando list quotation')
-        print(list_quatation)
+        # print('printando list quotation')
+        # print(list_quatation)
 
 
-        print('printando new list quotation')
-        print(list_quatation)    
+        # print('printando new list quotation')
+        # print(list_quatation)    
 
 
         I = []
@@ -51,14 +44,14 @@ def getTime_table(request):
             for output in group_elements(4,list_quatation):
                 I.append(output)
 
-            print('printando I')
-            print(I)
+            # print('printando I')
+            # print(I)
 
             ## CHAMA FUNCAO RESOLVE
 
             list_resolve = []
             list_resolve = resolve(I)
-            print(list_resolve)
+            # print(list_resolve)
         except ValueError as erro:
             messages.info(request, 'Por favor certifique se todos os campos foram preenchidos')
             return HttpResponseRedirect('/home')

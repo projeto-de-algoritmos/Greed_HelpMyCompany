@@ -7,15 +7,14 @@ class WeightedIntervalScheduling(object):
         self.solution = []
 
     def previous_intervals(self):
-        print('previous')
+        # print('previous')
         start = [task[1] for task in self.I]
-        print(start)
+        # print(start)
         finish = [task[2] for task in self.I]
-        print(finish)
+        # print(finish)
         p = []
 
         for i in range(len(self.I)):
-            # finds idx for which to input start[i] in finish times to still be sorted
             idx = bisect.bisect(finish, start[i]) - 1
             p.append(idx)
         
@@ -24,7 +23,7 @@ class WeightedIntervalScheduling(object):
         return p
 
     def find_solution(self, j):
-        print('findsolution')
+        # print('findsolution')
         if j == -1:
             return
 
@@ -56,8 +55,8 @@ class WeightedIntervalScheduling(object):
 
         for j in range(len(self.I)):
             opt_j = self.compute_opt(j)
-            print('printando opt')
-            print(opt_j)
+            # print('printando opt')
+            # print(opt_j)
             self.OPT.append(opt_j)
 
         self.find_solution(len(self.I) - 1)
@@ -79,8 +78,8 @@ def replaceTime(I):
 
 def resolve(I):
     # start = [task[1] for task in self.I]
-    print('entrou resolve')
-    print(I)
+    # print('entrou resolve')
+    # print(I)
     J = []
     for itens in I:
         print(itens[1])
