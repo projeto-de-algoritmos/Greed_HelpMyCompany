@@ -1,21 +1,19 @@
 **Greed_HelpMyCompany.** 
 
-Temas:
- - Greed
- 
 # HelpMyCompany
 
 **Trabalho**: Greed<br>
-**Conteúdo da Disciplina**: Greed (Algoritmos ambiciosos)<br>
+**Conteúdo da Disciplina**: Greed<br>
 
 ## Alunos
+
 |Matrícula | Aluno |
 | -- | -- |
+| 19/0044390 |  Victor Rayan Ferreira |
 | 18/0024868 |  Mateus Moreira Lima |
-| 19/0044390 |  Victor Rayan Adriano Ferreira |
 
 ## Sobre 
-Nosso trabalho utiliza o algoritmo ambicioso Weighted Interval Scheduling O(nlog(n)) para montar a melhor lista de tarefas à ser realizada por uma empresa, com isso a empresa pode definir as tarefas e suas prioridades, e o nosso algoritmo provê as tarefas/atividade mais lucrativas caso elas tenham choque de horário.
+Nosso trabalho monta a melhor lista de tarefas à ser realizada por uma empresa, com isso a empresa pode definir as tarefas e suas prioridades, e o nosso algoritmo provê as tarefas/atividade mais lucrativas caso elas tenham choque de horário.
 
 ## Screenshots
 Tela Inicial de cadastro das tarefas.
@@ -45,8 +43,6 @@ $ pip3 install -r requirements.txt
 ```
 
 ### Para rodar a aplicação:
-
-Para entrar dentro da pasta Mapfinder
 
 ```
 $ python manage.py runserver

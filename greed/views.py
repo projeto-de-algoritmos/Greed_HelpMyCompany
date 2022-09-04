@@ -23,35 +23,22 @@ def getTime_table(request):
 
         postdata = request.POST.dict()
         postdata.pop('csrfmiddlewaretoken')
-        # print(postdata)
-        # print(len(postdata))
-
+        
         keysList = list(postdata.values()) ## CHAMAR FUNCAO REMOVE QUOTATION
-        # print(keysList)
-
+        
         list_quatation = []
         list_quatation = removeQuotation(keysList)
-        # print('printando list quotation')
-        # print(list_quatation)
-
-
-        # print('printando new list quotation')
-        # print(list_quatation)    
-
-
+        
         I = []
         try:
             for output in group_elements(4,list_quatation):
                 I.append(output)
 
-            # print('printando I')
-            # print(I)
-
             ## CHAMA FUNCAO RESOLVE
 
             list_resolve = []
             list_resolve = resolve(I)
-            # print(list_resolve)
+            
         except ValueError as erro:
             messages.info(request, 'Por favor certifique se todos os campos foram preenchidos')
             return HttpResponseRedirect('/home')

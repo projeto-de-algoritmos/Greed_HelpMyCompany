@@ -1,5 +1,48 @@
 import bisect
 
+def replaceTime(I):
+    J = []
+    for itens in I:
+        itens0 = itens[0]
+        itens1 = str(itens[1])
+        itens2 = str(itens[2])
+        itens1 = itens1.replace(".",":")
+        itens2 = itens2.replace(".",":")
+        itens3 = itens[3]
+        J.append((itens0,itens1,itens2,itens3))
+
+    return J 
+
+def resolve(I):
+    # start = [task[1] for task in self.I]
+    # print('entrou resolve')
+    # print(I)
+    J = []
+    for itens in I:
+        print(itens[1])
+        itens0 =  itens[0]
+        itens1 = float(itens[1])
+        print(itens[1])
+        itens2 = float(itens[2])
+        itens3 = float(itens[3])
+        J.append((itens0,itens1,itens2,itens3))
+        
+    return J   
+
+      
+def removeQuotation(list):
+    J = []
+    for itens in list:
+        # print(itens)
+        itens = itens.replace(":",".")
+        # print(itens)
+        J.append(itens)
+
+    print(J)
+    return J
+
+
+
 class WeightedIntervalScheduling(object):
     def __init__(self, I):
         self.I = sorted(I, key=lambda tup: tup[2])  # (key = lambda tup : tup[1])
@@ -63,45 +106,6 @@ class WeightedIntervalScheduling(object):
 
         return self.OPT[-1], self.solution[::-1]
 
-def replaceTime(I):
-    J = []
-    for itens in I:
-        itens0 = itens[0]
-        itens1 = str(itens[1])
-        itens2 = str(itens[2])
-        itens1 = itens1.replace(".",":")
-        itens2 = itens2.replace(".",":")
-        itens3 = itens[3]
-        J.append((itens0,itens1,itens2,itens3))
 
-    return J 
-
-def resolve(I):
-    # start = [task[1] for task in self.I]
-    # print('entrou resolve')
-    # print(I)
-    J = []
-    for itens in I:
-        print(itens[1])
-        itens0 =  itens[0]
-        itens1 = float(itens[1])
-        print(itens[1])
-        itens2 = float(itens[2])
-        itens3 = float(itens[3])
-        J.append((itens0,itens1,itens2,itens3))
-        
-    return J   
-
-      
-def removeQuotation(list):
-    J = []
-    for itens in list:
-        # print(itens)
-        itens = itens.replace(":",".")
-        # print(itens)
-        J.append(itens)
-
-    print(J)
-    return J
 
 
